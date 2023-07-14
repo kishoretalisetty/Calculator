@@ -14,7 +14,9 @@ public class QcalcApplication {
 		System.out.println(calc.getResult());
          calc.subtract(10, 2);
 		 System.out.println(calc.getResult());
-		 calc.divide(2,1);
+		 calc.divide(4.0,2.0);
+		System.out.println(calc.getResult());
+		calc.divide(12,4);
 		System.out.println(calc.getResult());
          calc.multiply(10, 2);
 		 System.out.println(calc.getResult());

@@ -13,10 +13,29 @@ public class StandardCalculatorTest {
     void setup(){
         standardCalculator = new StandardCalculator();
     }
-    
 
-  
-
+    @Test
+    @DisplayName("Test Multiplication Overflow of Two Doubles")
+    void testMultiplicationOverflowForDoubles(){
+        //Assert
+        Assertions.assertThrows(ArithmeticException.class,new Executable(){
+            @Override
+            public void execute() throws Throwable{
+                standardCalculator.multiply(Double.MAX_VALUE,Double.MAX_VALUE);
+            }
+        });
+    }
+    @Test
+    @DisplayName("Test Multiplication Overflow of Two Doubles in which One is Positive and Other is Negative")
+    void testMultiplicationOverflowForDoublesOnePosOtherNeg(){
+        //Assert
+        Assertions.assertThrows(ArithmeticException.class,new Executable(){
+            @Override
+            public void execute() throws Throwable{
+                standardCalculator.multiply(-Double.MAX_VALUE,Double.MAX_VALUE);
+            }
+        });
+    }
 
     @Test
     @DisplayName("Test Addition Overflow of Two Doubles")
@@ -29,17 +48,6 @@ public class StandardCalculatorTest {
             }
         });
     }
-    
-
-    @Test
-    @DisplayName("Test Addition of Two Doubles")
-    void testAdditionOperationForDoubles(){
-        standardCalculator.add(1.0,1.5);
-        double actualResult = standardCalculator.getResult();
-        Assertions.assertEquals(2.5, actualResult);
-    }
-
-
     @Test
     @DisplayName("Test Subtraction Overflow of Two Doubles")
     void testSubtractionOverflowForDoubles(){
@@ -50,6 +58,14 @@ public class StandardCalculatorTest {
                 standardCalculator.subtract(-Double.MAX_VALUE,Double.MAX_VALUE);
             }
         });
+    }
+
+    @Test
+    @DisplayName("Test Addition of Two Doubles")
+    void testAdditionOperationForDoubles(){
+        standardCalculator.add(1.0,1.5);
+        double actualResult = standardCalculator.getResult();
+        Assertions.assertEquals(2.5, actualResult);
     }
 
     @Test

@@ -8,6 +8,16 @@ public class QcalcApplication {
 
 	public static void main(String[] args) {
 		//SpringApplication.run(QcalcApplication.class, args);
+
+  
+		
+      LogicCalculator cal = new LogicCalculator();
+
+        cal.AND(8, 6);
+
+          cal.printResult();
+
+
 		System.out.println("Starting QCalc..");
 		StandardCalculator calc = new StandardCalculator();
 		calc.add(10,10);

@@ -1,4 +1,8 @@
 # QCalc
+Languages :- Java
+
+Technologies/Frameworks :- Exception Handling, Unit Testing, J Unit
+
 The objective of this project is to obtain basic skills in Java and OOPs principles by building a subset of features seen in calculators.
 During the course of this project,
 1) Made use of different features of VSCode IDE to build the project.
